@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Race Tracking - Data</title>
+    <meta
+      name="description"
+      content="Data page for the Race Tracking project"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#44c8f5" />
+
+    <link rel="icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/screen.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/xaq1xlv.css" />
+
+    <script
+      src="https://cdn.socket.io/4.0.1/socket.io.min.js"
+      integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/script/appv2.js"></script>
+  </head>
+  <body class="js-data">
+    <!--TO DO: menu button for mobile-->
+    <header class="o-row o-row--green">
+      <div class="o-container u-max-width-none u-mb-s">
+        <div class="c-header">
+          <h1 class="c-name">Race Tracking</h1>
+
+          <div class="c-header__nav c-header__nav--main">
+            <nav class="c-nav">
+              <ul class="o-list c-nav__list">
+                <li class="c-nav__item is-selected">
+                  <a class="c-nav__link" href="./index.html">Home</a>
+                </li>
+                <li class="c-nav__item">
+                  <a class="c-nav__link" href="./data.html">Data</a>
+                </li>
+                <li class="c-nav__item">
+                  <a class="c-nav__link" href="./controls.html">Controls</a>
+                </li>
+                <li class="c-nav__item">
+                  <a class="c-nav__link" href="./about.html">About</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="c-header__mobile-nav-trigger">
+            <button class="o-button-reset c-nav-trigger js-toggle-nav">
+              <svg
+                class="c-nav-trigger__svg"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="o-row o-row--neutral-xx-dark">
+      <div class="o-container u-max-width-xl">
+        <h1>Data</h1>
+        <article class="o-section o-section--xl">
+          <div
+            class="
+              o-layout
+              o-layout--gutter-xl
+              o-layout--justify-start
+              o-layout--align-center
+            "
+          >
+            <div class="o-layout__item u-1-of-1-bp2 u-1-of-1-bp3">
+              <div class="u-max-width-xl">
+                <h2>Current values</h2>
+                <div
+                  class="
+                    o-layout o-layout--justify-center o-layout--align-center
+                  "
+                >
+                  <div
+                    class="
+                      o-layout
+                      o-layout--column
+                      o-layout--align-center
+                      o-layout--justify-center
+                      o-layout__item
+                      u-1-of-3-bp2
+                    "
+                  >
+                    <h3 class="o-layout__item u-1-of-2-bp2 c-label">
+                      Acceleration
+                    </h3>
+                    <p class="js-acc o-layout__item u-1-of-2-bp2">
+                      Not connected
+                    </p>
+                  </div>
+                  <div
+                    class="
+                      o-layout
+                      o-layout--column
+                      o-layout--align-center
+                      o-layout--justify-center
+                      o-layout__item
+                      u-1-of-3-bp2
+                    "
+                  >
+                    <h3 class="o-layout__item u-1-of-2-bp2 c-label">
+                      Temperature
+                    </h3>
+                    <p class="js-temp o-layout__item u-1-of-2-bp2">
+                      Not connected
+                    </p>
+                  </div>
+                  <div
+                    class="
+                      o-layout
+                      o-layout--column
+                      o-layout--align-center
+                      o-layout--justify-center
+                      o-layout__item
+                      u-1-of-3-bp2
+                    "
+                  >
+                    <h3 class="o-layout__item u-1-of-2-bp2 c-label">Light</h3>
+                    <p class="js-light o-layout__item u-1-of-2-bp2">
+                      Not connected
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="o-section o-section--xl">
+          <div
+            class="
+              o-layout
+              o-layout--gutter-xl
+              o-layout--justify-start
+              o-layout--align-center
+            "
+          >
+            <div class="o-layout__item u-1-of-1-bp2 u-1-of-1-bp3">
+              <div class="u-max-width-xl">
+                <h2>Saved data</h2>
+                <div>
+                  <p>
+                    Here you can request previous data tracked by the project.
+                    Simply fill in an amount of measurements you want to see,
+                    and optionally a start and end time, then press submit.
+                  </p>
+                  <p>
+                    Leaving the startdate blank will give you the requested
+                    amount before the enddate. By default the enddate is set to
+                    the most recent measurement, so leave this blank to get the
+                    latest values.
+                  </p>
+                  <div
+                    class="
+                      o-layout o-layout--justify-center o-layout--align-center
+                    "
+                  >
+                    <div
+                      class="
+                        o-layout
+                        o-layout--column
+                        o-layout--align-center
+                        o-layout--justify-center
+                        o-layout__item
+                        u-1-of-3-bp2
+                      "
+                    >
+                      <label
+                        for="amount"
+                        class="o-layout__item u-1-of-2-bp2 c-label"
+                        >Amount</label
+                      >
+                      <input
+                        id="amount"
+                        name="amount"
+                        type="number"
+                        class="o-layout__item u-1-of-2-bp2 js-amount"
+                        min="1"
+                        value="10"
+                      />
+                    </div>
+                    <div
+                      class="
+                        o-layout
+                        o-layout--column
+                        o-layout--align-center
+                        o-layout--justify-center
+                        o-layout__item
+                        u-1-of-3-bp2
+                      "
+                    >
+                      <label
+                        for="startdate"
+                        class="o-layout__item u-1-of-2-bp2 c-label"
+                        >Start date</label
+                      >
+                      <input
+                        id="startdate"
+                        name="startdate"
+                        type="datetime-local"
+                        class="o-layout__item u-1-of-2-bp2 js-start"
+                        value="2000-01-01T00:00"
+                      />
+                    </div>
+                    <div
+                      class="
+                        o-layout
+                        o-layout--column
+                        o-layout--align-center
+                        o-layout--justify-center
+                        o-layout__item
+                        u-1-of-3-bp2
+                      "
+                    >
+                      <label
+                        for="enddate"
+                        class="o-layout__item u-1-of-2-bp2 c-label"
+                        >End date</label
+                      >
+                      <input
+                        id="enddate"
+                        name="enddate"
+                        type="datetime-local"
+                        class="o-layout__item u-1-of-2-bp2 js-end"
+                        value="2030-01-01T00:00"
+                      />
+                    </div>
+                  </div>
+                  <div class="c-form__row">
+                    <button class="js-btn-data c-button-green">
+                      Request data
+                    </button>
+                  </div>
+                </div>
+                <div class="js-table-data">
+                  <div
+                    class="
+                      o-layout o-layout--justify-center o-layout--align-center
+                    "
+                  >
+                    <div
+                      class="
+                        o-layout
+                        o-layout--column
+                        o-layout--align-center
+                        o-layout--justify-center
+                        o-layout__item
+                        u-1-of-4-bp2
+                      "
+                    >
+                      <h3 class="o-layout__item c-label">Time</h3>
+                    </div>
+                    <div
+                      class="
+                        o-layout
+                        o-layout--column
+                        o-layout--align-center
+                        o-layout--justify-center
+                        o-layout__item
+                        u-1-of-4-bp2
+                      "
+                    >
+                      <h3 class="o-layout__item c-label">Acceleration</h3>
+                    </div>
+                    <div
+                      class="
+                        o-layout
+                        o-layout--column
+                        o-layout--align-center
+                        o-layout--justify-center
+                        o-layout__item
+                        u-1-of-4-bp2
+                      "
+                    >
+                      <h3 class="o-layout__item c-label">Temperature</h3>
+                    </div>
+                    <div
+                      class="
+                        o-layout
+                        o-layout--column
+                        o-layout--align-center
+                        o-layout--justify-center
+                        o-layout__item
+                        u-1-of-4-bp2
+                      "
+                    >
+                      <h3 class="o-layout__item c-label">Light</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <aside class="c-mobile-nav">
+      <div class="c-mobile-nav__bg"></div>
+      <div class="c-mobile-nav__body">
+        <div class="c-mobile-nav__header">
+          <h1 class="c-logo">Race Tracking</h1>
+          <button class="o-button-reset c-nav-trigger js-toggle-nav">
+            <svg
+              class="c-nav-trigger__svg"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="c-mobile-nav__nav c-mobile-nav__nav--main">
+          <nav class="c-nav">
+            <ul class="o-list">
+              <li class="c-nav__item">
+                <a href="index.html" class="c-nav__link">Home</a>
+              </li>
+              <li class="c-nav__item">
+                <a href="./data.html" class="c-nav__link">Data</a>
+              </li>
+              <li class="c-nav__item">
+                <a href="./controls.html" class="c-nav__link">Controls</a>
+              </li>
+              <li class="c-nav__item">
+                <a href="./about.html" class="c-nav__link">About</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </aside>
+  </body>
+</html>

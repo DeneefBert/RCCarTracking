@@ -1,0 +1,1150 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+/* Handled by Adobe typekit */
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: zeitung, Helvetica, arial, sans-serif;
+  color: #241c15;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+
+.has-mobile-nav {
+  overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::selection {
+  background: #007c89;
+  color: white;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+  margin: 0 0 24px;
+  text-align: center
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: center
+}
+
+h4,
+h5,
+h6 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol {
+  padding-left: 24px;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+  font-family: "Times New Roman", serif;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 8px;
+  color: Grey;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  color: RoyalBlue;
+  transition: all 0.1s ease-in-out;
+}
+
+a:visited,
+a:active {
+  color: BlueViolet;
+}
+
+a:hover,
+a:focus {
+  color: Crimson;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  position: relative;
+  padding: 24px 24px 0;
+  display: flow-root;
+}
+
+/* color modifiers */
+
+.o-row--green {
+  background-color: #68dea6;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.o-row--xl {
+  padding-top: 72px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .o-row {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .o-row--md {
+    padding-top: 48px;
+    padding-bottom: 24px;
+  }
+
+  .o-row--lg {
+    padding-top: 72px;
+    padding-bottom: 48px;
+  }
+}
+
+@media (min-width: 992px) {
+  .o-row--xl {
+    padding-top: 96px;
+    padding-bottom: 72px;
+  }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 90em; /* 90 * 16px = 1440px */
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+  display: flow-root;
+}
+
+.o-section + .o-section {
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .o-section--lg + .o-section--lg,
+  .o-section--xl + .o-section--xl {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .o-section--xl + .o-section--xl {
+    margin-top: 72px;
+  }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.o-layout__item {
+  flex-basis: 100%;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+  margin: 0 -16px;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 16px;
+}
+
+.o-layout--gutter-sm {
+  margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+  padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+  margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+  padding: 0 24px;
+}
+
+.o-layout--gutter-xl {
+  margin: 0 -48px;
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+  padding: 0 48px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+  flex-direction: row-reverse;
+}
+
+.o-layout--column {
+  flex-direction: column;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+  justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+  justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+  justify-content: center;
+}
+
+.o-layout--justify-space-around {
+  justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+  justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+  align-items: flex-start;
+}
+
+.o-layout--align-end {
+  align-items: flex-end;
+}
+
+.o-layout--align-center {
+  align-items: center;
+}
+
+.o-layout--align-baseline {
+  align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+  align-content: start;
+}
+
+.o-layout--align-content-end {
+  align-content: end;
+}
+
+.o-layout--align-content-center {
+  align-content: center;
+}
+
+.o-layout--align-content-space-around {
+  align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+  align-content: space-between;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Name
+    ---
+    Site name for header
+*/
+
+.c-name {
+  font-size: 30px;
+}
+
+.c-name-mobile {
+  padding-top: 10px;
+}
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-header__nav {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .c-header__nav {
+    display: block;
+  }
+
+  .c-header__nav {
+
+    /* solution 1 */
+    /* margin-left: auto; */
+
+    /* solution 2 */
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+/*
+    Component: label
+    ---
+    Labels on the control tab
+*/
+
+.c-label {
+  text-align: center;
+  font-size: large;
+  margin-bottom: 0.5rem;
+  width: max-content;
+}
+
+.c-label-red {
+  background-color: #ff0808;
+}
+
+.c-label-green {
+  background-color: #00ff00;
+}
+
+.c-label-blue {
+  background-color: #00f0ff;
+}
+
+.c-form__row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  outline: none;
+}
+
+.c-nav-trigger__svg {
+  fill: #202024;
+  height: 100%;
+}
+
+.c-nav {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.c-nav__link {
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  padding: 20px 0;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+  color: #241c15;
+}
+
+.c-nav__link:hover,
+.c-nav__link:focus {
+  color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .c-nav__list {
+    display: flex;
+  }
+
+  .c-nav__item--pap {
+    margin-left: 20px;
+  }
+
+  .c-nav__link {
+    padding: 8px 20px;
+  }
+}
+
+  .c-button-green {
+    background-color: #68dea6;
+    border-color: #64829d;
+  }
+
+  .div-green {
+    width: max-content;
+    background-color: #68dea6;
+  }
+
+  .c-table-border {
+    border-bottom: 2px solid #64829d;
+    margin-top: 5px;
+  }
+
+/*
+    Component: body
+    ---
+    body type treatments to style everything that differs from standard typography elements
+*/
+
+.c-body {
+  position: relative;
+  font-size: 16px;
+}
+
+/* .c-body--md {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.c-body--lg {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.c-body--xl {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 40px;
+}
+
+@media (min-width: 768px) {
+  .c-body--xl {
+    font-size: 54px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c-body--xl {
+    font-size: 54px;
+    line-height: 64px;
+  }
+} */
+
+/*
+    Component: Table
+    ---
+    Table on the Data page
+*/
+.c-table {
+  display: flex;
+}
+
+.c-table td,
+.c-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.c-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #68dea6;
+}
+.c-table-top {
+  background-color: #68dea6;
+}
+
+/*
+    Component: Intro
+    ---
+    Intro part on the homepage
+*/
+
+.c-intro {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .c-intro__figure {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c-intro {
+    margin-bottom: -96px;
+  }
+
+  .c-intro__body {
+    position: relative;
+    top: -48px;
+  }
+}
+
+/*
+    Component: pap link
+    ---
+    Small pap link with custom animation
+*/
+
+.c-link-pap {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 8px 20px;
+  box-shadow: inset 0 0 0 1px #007c89;
+  background: #007c89;
+}
+
+.c-link-pap,
+.c-link-pap:visited,
+.c-link-pap:active {
+  color: #fff;
+}
+
+.c-link-pap:hover,
+.c-link-pap:focus {
+  color: #fff;
+  background: #4f95ff;
+}
+
+.c-link-pap:active {
+  background-color: #3385ff;
+}
+
+.c-link-pap--lg {
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+/* Mobile Nav stuff */
+/*
+    Component: page
+    ---
+    Page component for mobile nav transition
+*/
+
+.c-page {
+  position: relative;
+  will-change: transform;
+  transition: transform .25s ease;
+}
+
+.has-mobile-nav .c-page {
+  transform: translateX(25%);
+}
+
+@media (min-width: 992px) {
+  .c-page {
+      transform: none !important;
+  }
+}
+
+/*
+    Component: mobile nav
+    ---
+    Dedicated mobile nav component
+*/
+
+.c-mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.has-mobile-nav .c-mobile-nav {
+  pointer-events: auto;
+}
+
+.c-mobile-nav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.c-mobile-nav__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #202024;
+  will-change: opacity;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.has-mobile-nav .c-mobile-nav__bg {
+  opacity: .5;
+}
+
+.c-mobile-nav__body {
+  position: relative;
+  padding: 0 24px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #68dea6;
+  will-change: transform;
+  transform: translateX(100%);
+  transition: transform .25s ease;
+}
+
+.has-mobile-nav .c-mobile-nav__body {
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  .c-mobile-nav__body {
+      padding: 0 48px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Hide the mobile nav on larger viewports even whent it's open on smaller screens */
+  .c-mobile-nav {
+      display: none !important;
+  }
+}
+
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+  padding-top: 0 !important;
+}
+
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+  margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+  margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+  margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+  margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+  margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+  max-width: 36em !important;
+}
+
+.u-max-width-md {
+  max-width: 45em !important;
+}
+
+.u-max-width-lg {
+  max-width: 60em !important;
+}
+
+.u-max-width-xl {
+  max-width: 75em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
+}
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+  flex-basis: auto !important;
+}
+
+.u-flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+  flex-basis: calc(100% / 2) !important;
+}
+
+.u-1-of-3 {
+  flex-basis: calc(100% / 3) !important;
+}
+
+.u-2-of-3 {
+  flex-basis: calc(100% / 3 * 2) !important;
+}
+
+.u-1-of-4 {
+  flex-basis: calc(100% / 4) !important;
+}
+
+.u-3-of-4 {
+  flex-basis: calc(100% / 4 * 3) !important;
+}
+
+.u-1-of-5 {
+  flex-basis: calc(100% / 5) !important;
+}
+
+.u-2-of-5 {
+  flex-basis: calc(100% / 5 * 2) !important;
+}
+
+.u-3-of-5 {
+  flex-basis: calc(100% / 5 * 3) !important;
+}
+
+.u-4-of-5 {
+  flex-basis: calc(100% / 5 * 4) !important;
+}
+
+.u-1-of-6 {
+  flex-basis: calc(100% / 6) !important;
+}
+
+.u-5-of-6 {
+  flex-basis: calc(100% / 6 * 5) !important;
+}
+
+@media (min-width: 576px) {
+  .u-1-of-2-bp1 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp1 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp1 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp1 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp1 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp1 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp1 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp1 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-1-of-2-bp2 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp2 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp2 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp2 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp2 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp2 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp2 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp2 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .u-1-of-2-bp3 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp3 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp3 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp3 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp3 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp3 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp3 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp3 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .u-1-of-2-bp4 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp4 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp4 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp4 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp4 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp4 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp4 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp4 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

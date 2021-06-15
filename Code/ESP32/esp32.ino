@@ -4,10 +4,9 @@
 #include <DS18B20.h>
 #include <Adafruit_NeoPixel.h>
 
-//char* ssid = "Howest-IoT";
-//char* wifi_password = "LZe5buMyZUcDpLY";
-char* ssid = "FroeFroe";
-char* wifi_password = "visa_visa_uno_punto_berlingo_berlingo";
+char* ssid = "Your Network";
+char* wifi_password = "Your Password";
+
 
 char* mqtt_server = "192.168.0.251";  // IP of the MQTT broker
 char* accx_topic = "sensors/accx";
